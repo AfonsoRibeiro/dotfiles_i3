@@ -29,9 +29,9 @@ set $mod Mod4
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up h
-set $down j
-set $left k
+set $up j
+set $down k
+set $left h
 set $right l
 
 # use Mouse+$mod to drag floating windows to their wanted position
@@ -131,6 +131,17 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# monitors
+# force_xinerama yes
+set $single xrandr --output eDP-1-1 --auto --output HDMI-1-1 --off
+set $double xrandr --output eDP-1-1 --auto --output HDMI-1-1 --auto --right-of eDP-1-1
+
+bindsym $mod+n exec $single ; restart
+bindsym $mod+m exec $double ; restart
+
+# move the current workspace to the next output
+bindsym $mod+x move workspace to output right
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -189,3 +200,12 @@ bindsym XF86MonBrightnessDown   exec light -U 1 # decrease screen brightness
 bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/'
 # Print screen entire view
 bindsym $mod+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/'
+
+# Network-Manager (wifi)
+bindsym XF86AudioNext exec i3-sensible-terminal -e nmtui
+
+# Audio-Manager
+bindsym XF86AudioPlay exec pavucontrol
+
+# File-Manager
+bindsym XF86AudioPrev exec nautilus
