@@ -135,9 +135,11 @@ bindsym $mod+Shift+0 move container to workspace 10
 # force_xinerama yes
 set $single xrandr --output eDP-1-1 --auto --output HDMI-1-1 --off
 set $double xrandr --output eDP-1-1 --auto --output HDMI-1-1 --auto --right-of eDP-1-1
+set $single_out xrandr --output eDP-1-1 --off --output HDMI-1-1 --auto
 
 bindsym $mod+n exec $single ; restart
 bindsym $mod+m exec $double ; restart
+bindsym $mod+Shift+m exec $single_out ; restart
 
 # move the current workspace to the next output
 bindsym $mod+x move workspace to output right
@@ -195,6 +197,9 @@ bindsym XF86AudioMute           exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessUp     exec light -A 1 # increase screen brightness
 bindsym XF86MonBrightnessDown   exec light -U 1 # decrease screen brightness
 
+# Screen lock
+bindsym Mod1+l  exec ~/.i3/lock_screen.sh
+
 # Print screen
 # Print screen focused window
 bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/'
@@ -209,3 +214,7 @@ bindsym XF86AudioPlay exec pavucontrol
 
 # File-Manager
 bindsym XF86AudioPrev exec nautilus
+
+# wine
+# Battle.net
+bindsym Mod1+h exec i3-sensible-terminal -e '/home/afonso_sr/.i3/lauch_battle_net.sh'

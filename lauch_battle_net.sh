@@ -1,0 +1,1 @@
+wine explorer /desktop=abalaba,1366x768 ~/.wine/drive_c/Program\ Files/Battle.net/Battle.net\ Launcher.exe
