@@ -199,7 +199,7 @@ bindsym XF86MonBrightnessDown   exec light -U 1 # decrease screen brightness
 
 # Screen lock
 bindsym Mod1+l       exec '/home/afonso_sr/.i3/lock_screen.sh'
-bindsym Mod1+Shift+l exec '/home/afonso_sr/.i3/lock_screen_18.sh'
+bindsym Mod1+Shift+l exec '/home/afonso_sr/.i3/lock_screen_2.sh'
 
 # Print screen
 # Print screen focused window
