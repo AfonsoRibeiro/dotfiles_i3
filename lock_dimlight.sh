@@ -12,6 +12,6 @@ while (( $(echo "$light > 1" |bc -l) && $(echo "$oldlight >= $light" |bc -l) ))
 do
     light -U 1
     oldlight=$light
-    sleep 0.1
     light=$(light)
+    sleep 0.1
 done
